@@ -1,0 +1,8 @@
+## This is a simple exress server
+
+```
+$ npm start
+
+Server has started at http://localhost:3000
+
+```
