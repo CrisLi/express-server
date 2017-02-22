@@ -1,0 +1,14 @@
+sudo: required
+services:
+  - docker
+language: node_js
+node_js:
+  - "node"
+before_script:
+  - npm install
+script:
+  - npm run lint
+  - npm run docker:build
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - npm run docker:push
